@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bhoxtfutuhl4m"]
+
+[ext_resource type="Texture2D" uid="uid://cgaeen8jq0a7j" path="res://Assets/Sprites/temporary-delete_soon/temp-arrow-spritesheet.png" id="1_o7l7b"]
+[ext_resource type="Script" uid="uid://b7hxf8fs62dqu" path="res://Script/falling_key.gd" id="2_plh85"]
+
+[node name="FallingKey" type="Sprite2D" unique_id=481368521]
+texture = ExtResource("1_o7l7b")
+hframes = 4
+script = ExtResource("2_plh85")
+fall_speed = 5.0
+
+[node name="Timer" type="Timer" parent="." unique_id=1323292744]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="OutOfBounds" type="Timer" parent="." unique_id=117456323]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="OutOfBounds" to="." method="_on_out_of_bounds_timeout"]
