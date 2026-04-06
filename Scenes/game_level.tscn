@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c0oqy31gicygt" path="res://Scenes/key_listener.tscn" id="1_jcjmw"]
 [ext_resource type="PackedScene" uid="uid://bhoxtfutuhl4m" path="res://Scenes/falling_key.tscn" id="2_jtjkd"]
+[ext_resource type="PackedScene" uid="uid://ftreitpbdwlw" path="res://Scenes/game_ui.tscn" id="3_ht4rx"]
 
 [node name="GameLevel" type="Node2D" unique_id=342435873]
 
@@ -42,3 +43,5 @@ frame = 2
 [node name="FallingUp" parent="." unique_id=1369105128 instance=ExtResource("2_jtjkd")]
 position = Vector2(741, -49)
 frame = 3
+
+[node name="GameUI" parent="." unique_id=630694922 instance=ExtResource("3_ht4rx")]

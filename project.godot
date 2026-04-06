@@ -15,6 +15,10 @@ run/main_scene="uid://bj56kop2sl4qw"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Signals="*uid://cu3xo5om6wjpf"
+
 [input]
 
 button_S={

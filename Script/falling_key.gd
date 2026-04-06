@@ -10,7 +10,7 @@ var init_y_pos: float = -360
 # Kalo lewat jadi true
 var has_passed: bool = false
 # Posisi pas lewatin input area
-var pass_threshold: float = 550.0
+var pass_threshold: float = 540.0
 
 func _init():
 	set_process(false)

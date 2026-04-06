@@ -11,6 +11,18 @@ var key_name: String = ""
 # Queue key jatoh
 var falling_key_queue = []
 
+# Jika distance_from_pass lebih kecil dari threshold, beri score tersebut
+var perfect_press_threshold: float = 30
+var great_press_threshold: float = 50
+var good_press_threshold: float = 60
+var ok_press_threshold: float = 80
+
+# Score untuk setiap threshold
+var perfect_press_score: float = 250
+var great_press_score: float = 100
+var good_press_score: float = 50
+var ok_press_score: float = 20
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -31,7 +43,19 @@ func _process(delta: float) -> void:
 				var key_to_pop = falling_key_queue.pop_front()
 				if is_instance_valid(key_to_pop):
 					var distance_from_pass = abs(key_to_pop.pass_threshold - key_to_pop.global_position.y)
-					print (distance_from_pass)
+					
+					if distance_from_pass < perfect_press_threshold:
+						Signals.IncrementScore.emit(perfect_press_score)
+					elif distance_from_pass < great_press_threshold:
+						Signals.IncrementScore.emit(great_press_score)
+					elif distance_from_pass < good_press_threshold:
+						Signals.IncrementScore.emit(good_press_score)
+					elif distance_from_pass < ok_press_threshold:
+						Signals.IncrementScore.emit(ok_press_score)
+					else:
+#						Miss
+						pass
+					
 					key_to_pop.queue_free()
 
 # Bikin Key nya jatoh
