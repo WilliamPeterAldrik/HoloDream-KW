@@ -2,6 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://c0oqy31gicygt" path="res://Scenes/key_listener.tscn" id="1_jcjmw"]
 [ext_resource type="PackedScene" uid="uid://bhoxtfutuhl4m" path="res://Scenes/falling_key.tscn" id="2_jtjkd"]
+[ext_resource type="PackedScene" uid="uid://dny5nggd8o0ul" path="res://Scenes/miss_zone.tscn" id="3_ht4rx"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_u7uub"]
+distance = -1.0
 
 [node name="GameLevel" type="Node2D" unique_id=342435873]
 
@@ -11,22 +15,22 @@ offset = Vector2(0, 50)
 
 [node name="LeftArrow" parent="." unique_id=1457277051 instance=ExtResource("1_jcjmw")]
 position = Vector2(419, 521)
-key_name = "button_S"
+key_name = "Button_d"
 
 [node name="DownArrow" parent="." unique_id=1134943 instance=ExtResource("1_jcjmw")]
 position = Vector2(525, 521)
 frame = 1
-key_name = "button_D"
+key_name = "Button_f"
 
 [node name="RightArrow" parent="." unique_id=1814049272 instance=ExtResource("1_jcjmw")]
 position = Vector2(638, 521)
 frame = 2
-key_name = "button_K"
+key_name = "Button_j"
 
 [node name="UpArrow" parent="." unique_id=1658740214 instance=ExtResource("1_jcjmw")]
 position = Vector2(741, 521)
 frame = 3
-key_name = "button_L"
+key_name = "Button_k"
 
 [node name="FallingLeft" parent="." unique_id=481368521 instance=ExtResource("2_jtjkd")]
 position = Vector2(419, -49)
@@ -42,3 +46,9 @@ frame = 2
 [node name="FallingUp" parent="." unique_id=1369105128 instance=ExtResource("2_jtjkd")]
 position = Vector2(741, -49)
 frame = 3
+
+[node name="MissZone" parent="." unique_id=165512270 instance=ExtResource("3_ht4rx")]
+position = Vector2(579, 644)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MissZone" unique_id=201530656]
+shape = SubResource("WorldBoundaryShape2D_u7uub")

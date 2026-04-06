@@ -26,13 +26,15 @@ func _process(delta: float) -> void:
 	
 	# Kalo button di pencet, key nya ilang
 	# TODO: Nentuin scoring berdasarkan jarak key jatoh n key input
-		if Input.is_action_just_pressed(key_name):
-			if falling_key_queue.size() > 0:
-				var key_to_pop = falling_key_queue.pop_front()
-				if is_instance_valid(key_to_pop):
-					var distance_from_pass = abs(key_to_pop.pass_threshold - key_to_pop.global_position.y)
-					print (distance_from_pass)
-					key_to_pop.queue_free()
+	if Input.is_action_just_pressed(key_name):
+		if falling_key_queue.size() > 0:
+			var front_key = falling_key_queue.front()
+			if is_instance_valid(front_key) and not front_key.has_passed:
+				front_key.is_handled = true
+				front_key.queue_free()
+				falling_key_queue.pop_front()
+			else:
+				print("MISS INPUT")
 
 # Bikin Key nya jatoh
 func createFallingKey():

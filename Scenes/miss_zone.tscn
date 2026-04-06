@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dny5nggd8o0ul"]
+
+[ext_resource type="Script" uid="uid://bbglxvb8lsnaw" path="res://Script/miss_zone.gd" id="1_m6xex"]
+
+[node name="MissZone" type="Area2D" unique_id=165512270]
+collision_mask = 2
+script = ExtResource("1_m6xex")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
