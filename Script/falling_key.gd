@@ -10,6 +10,7 @@ var init_y_pos: float = -360
 # Kalo lewat jadi true
 var has_passed: bool = false
 # Posisi pas lewatin input area
+<<<<<<< HEAD
 var pass_threshold: float = 550.0
 var is_handled: bool = false
 
@@ -18,6 +19,9 @@ func on_miss():
 		return
 		is_handled = true
 		queue_free()
+=======
+var pass_threshold: float = 540.0
+>>>>>>> b01dd41881bd549f3e60b3365a4e452d58cf7dba
 
 func _init():
 	set_process(false)
