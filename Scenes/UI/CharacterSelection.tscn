@@ -1,0 +1,213 @@
+[gd_scene format=3 uid="uid://cremgv4m63fqj"]
+
+[ext_resource type="Texture2D" uid="uid://cgyihqaut84y4" path="res://Assets/Sprites/Kaela/Idle/Kaela-Idle-1.png.png" id="1_m4625"]
+[ext_resource type="Texture2D" uid="uid://dg57ekfmomrk1" path="res://Assets/Sprites/Reine/Idle/Reine Idle-1.png.png" id="2_be208"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o1m4t"]
+bg_color = Color(0.8784314, 0.9098039, 0.9607843, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v6w75"]
+bg_color = Color(0.8784314, 0.9098039, 0.9607843, 1)
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8c456"]
+bg_color = Color(0.8784314, 0.9098039, 0.9607843, 1)
+shadow_color = Color(0.3180198, 0.31801978, 0.31801975, 0.6)
+
+[sub_resource type="LabelSettings" id="LabelSettings_or2x4"]
+font_size = 40
+font_color = Color(0.53428954, 0.697679, 0.8579754, 1)
+outline_size = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q5fs0"]
+bg_color = Color(0.99116415, 0.99116427, 0.99116415, 1)
+corner_detail = 20
+shadow_color = Color(0.5729883, 0.5729883, 0.5729883, 0.6)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xx2ao"]
+bg_color = Color(0.99116415, 0.99116427, 0.99116415, 1)
+corner_detail = 20
+shadow_color = Color(0.40999934, 0.63750845, 0.8625017, 0.6)
+shadow_size = 4
+
+[node name="CharacterSelect" type="Control" unique_id=25267748]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="Panel" parent="." unique_id=1048004402]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_o1m4t")
+
+[node name="MarginContainer" type="MarginContainer" parent="Background" unique_id=568075328]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxMain" type="VBoxContainer" parent="Background/MarginContainer" unique_id=627232809]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="TopBar" type="HBoxContainer" parent="Background/MarginContainer/VBoxMain" unique_id=468534406]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="BackButton" type="Button" parent="Background/MarginContainer/VBoxMain/TopBar" unique_id=21785344]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.53333336, 0.69803923, 0.85882354, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_v6w75")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8c456")
+button_mask = 0
+text = "< Back"
+
+[node name="TitleLabel" type="Label" parent="Background/MarginContainer/VBoxMain/TopBar" unique_id=681946821]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Select Character"
+label_settings = SubResource("LabelSettings_or2x4")
+horizontal_alignment = 1
+
+[node name="CharacterGrid" type="HBoxContainer" parent="Background/MarginContainer/VBoxMain" unique_id=139191878]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="Kaela" type="Button" parent="Background/MarginContainer/VBoxMain/CharacterGrid" unique_id=1108888449]
+custom_minimum_size = Vector2(250, 350)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_q5fs0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xx2ao")
+
+[node name="VBoxCard" type="VBoxContainer" parent="Background/MarginContainer/VBoxMain/CharacterGrid/Kaela" unique_id=1792429754]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="CharImage" type="TextureRect" parent="Background/MarginContainer/VBoxMain/CharacterGrid/Kaela/VBoxCard" unique_id=492576879]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_m4625")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CharName" type="Label" parent="Background/MarginContainer/VBoxMain/CharacterGrid/Kaela/VBoxCard" unique_id=1694600823]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.36078432, 0.2509804, 0.2, 1)
+theme_override_font_sizes/font_size = 25
+text = "Kaela"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Reine" type="Button" parent="Background/MarginContainer/VBoxMain/CharacterGrid" unique_id=835335916]
+custom_minimum_size = Vector2(250, 350)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_q5fs0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xx2ao")
+
+[node name="VBoxCard" type="VBoxContainer" parent="Background/MarginContainer/VBoxMain/CharacterGrid/Reine" unique_id=299746118]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="CharImage" type="TextureRect" parent="Background/MarginContainer/VBoxMain/CharacterGrid/Reine/VBoxCard" unique_id=786217741]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_be208")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CharName" type="Label" parent="Background/MarginContainer/VBoxMain/CharacterGrid/Reine/VBoxCard" unique_id=262085145]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.36078432, 0.2509804, 0.2, 1)
+theme_override_font_sizes/font_size = 25
+text = "Reine"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Char3" type="Button" parent="Background/MarginContainer/VBoxMain/CharacterGrid" unique_id=1046253602]
+custom_minimum_size = Vector2(250, 350)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_q5fs0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xx2ao")
+
+[node name="VBoxCard" type="VBoxContainer" parent="Background/MarginContainer/VBoxMain/CharacterGrid/Char3" unique_id=1734285393]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="CharImage" type="TextureRect" parent="Background/MarginContainer/VBoxMain/CharacterGrid/Char3/VBoxCard" unique_id=1259977606]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_m4625")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CharName" type="Label" parent="Background/MarginContainer/VBoxMain/CharacterGrid/Char3/VBoxCard" unique_id=1002630338]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.36078432, 0.2509804, 0.2, 1)
+theme_override_font_sizes/font_size = 25
+text = "???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Char4" type="Button" parent="Background/MarginContainer/VBoxMain/CharacterGrid" unique_id=432138886]
+custom_minimum_size = Vector2(250, 350)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_q5fs0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xx2ao")
+
+[node name="VBoxCard" type="VBoxContainer" parent="Background/MarginContainer/VBoxMain/CharacterGrid/Char4" unique_id=1922380578]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="CharImage" type="TextureRect" parent="Background/MarginContainer/VBoxMain/CharacterGrid/Char4/VBoxCard" unique_id=1589737807]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_m4625")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CharName" type="Label" parent="Background/MarginContainer/VBoxMain/CharacterGrid/Char4/VBoxCard" unique_id=1243671690]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.36078432, 0.2509804, 0.2, 1)
+theme_override_font_sizes/font_size = 25
+text = "???"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,214 @@
+[gd_scene format=3 uid="uid://cg4jlsc1vh63x"]
+
+[ext_resource type="Texture2D" uid="uid://cgyihqaut84y4" path="res://Assets/Sprites/Kaela/Idle/Kaela-Idle-1.png.png" id="1_m4625"]
+[ext_resource type="Texture2D" uid="uid://dg57ekfmomrk1" path="res://Assets/Sprites/Reine/Idle/Reine Idle-1.png.png" id="2_be208"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o1m4t"]
+bg_color = Color(0.8784314, 0.9098039, 0.9607843, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v6w75"]
+bg_color = Color(0.8784314, 0.9098039, 0.9607843, 1)
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8c456"]
+bg_color = Color(0.8784314, 0.9098039, 0.9607843, 1)
+shadow_color = Color(0.3180198, 0.31801978, 0.31801975, 0.6)
+
+[sub_resource type="LabelSettings" id="LabelSettings_or2x4"]
+font_size = 40
+font_color = Color(0.53428954, 0.697679, 0.8579754, 1)
+outline_size = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q5fs0"]
+bg_color = Color(0.99116415, 0.99116427, 0.99116415, 1)
+corner_detail = 20
+shadow_color = Color(0.5729883, 0.5729883, 0.5729883, 0.6)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xx2ao"]
+bg_color = Color(0.99116415, 0.99116427, 0.99116415, 1)
+corner_detail = 20
+shadow_color = Color(0.40999934, 0.63750845, 0.8625017, 0.6)
+shadow_size = 4
+
+[node name="SongSelect" type="Control" unique_id=25267748]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="Panel" parent="." unique_id=1048004402]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_o1m4t")
+
+[node name="MarginContainer" type="MarginContainer" parent="Background" unique_id=568075328]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 80
+
+[node name="VBoxMain" type="VBoxContainer" parent="Background/MarginContainer" unique_id=627232809]
+layout_mode = 2
+theme_override_constants/separation = 90
+
+[node name="TopBar" type="HBoxContainer" parent="Background/MarginContainer/VBoxMain" unique_id=468534406]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="BackButton" type="Button" parent="Background/MarginContainer/VBoxMain/TopBar" unique_id=21785344]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.53333336, 0.69803923, 0.85882354, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_v6w75")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8c456")
+button_mask = 0
+text = "< Back"
+
+[node name="TitleLabel" type="Label" parent="Background/MarginContainer/VBoxMain/TopBar" unique_id=681946821]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Select Song"
+label_settings = SubResource("LabelSettings_or2x4")
+horizontal_alignment = 1
+
+[node name="SongGrid" type="HBoxContainer" parent="Background/MarginContainer/VBoxMain" unique_id=642032127]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="Song1" type="Button" parent="Background/MarginContainer/VBoxMain/SongGrid" unique_id=650179126]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_q5fs0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xx2ao")
+
+[node name="VBoxCard" type="VBoxContainer" parent="Background/MarginContainer/VBoxMain/SongGrid/Song1" unique_id=1791260457]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="CharImage" type="TextureRect" parent="Background/MarginContainer/VBoxMain/SongGrid/Song1/VBoxCard" unique_id=790082179]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_m4625")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CharName" type="Label" parent="Background/MarginContainer/VBoxMain/SongGrid/Song1/VBoxCard" unique_id=1593113569]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.36078432, 0.2509804, 0.2, 1)
+theme_override_font_sizes/font_size = 25
+text = "???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Song2" type="Button" parent="Background/MarginContainer/VBoxMain/SongGrid" unique_id=1809544619]
+custom_minimum_size = Vector2(250, 350)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_q5fs0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xx2ao")
+
+[node name="VBoxCard" type="VBoxContainer" parent="Background/MarginContainer/VBoxMain/SongGrid/Song2" unique_id=145051430]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="CharImage" type="TextureRect" parent="Background/MarginContainer/VBoxMain/SongGrid/Song2/VBoxCard" unique_id=2006230457]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_be208")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CharName" type="Label" parent="Background/MarginContainer/VBoxMain/SongGrid/Song2/VBoxCard" unique_id=1555024427]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.36078432, 0.2509804, 0.2, 1)
+theme_override_font_sizes/font_size = 25
+text = "???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Song3" type="Button" parent="Background/MarginContainer/VBoxMain/SongGrid" unique_id=1711249622]
+custom_minimum_size = Vector2(250, 350)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_q5fs0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xx2ao")
+
+[node name="VBoxCard" type="VBoxContainer" parent="Background/MarginContainer/VBoxMain/SongGrid/Song3" unique_id=1701898575]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="CharImage" type="TextureRect" parent="Background/MarginContainer/VBoxMain/SongGrid/Song3/VBoxCard" unique_id=2039535641]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_m4625")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CharName" type="Label" parent="Background/MarginContainer/VBoxMain/SongGrid/Song3/VBoxCard" unique_id=1479318844]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.36078432, 0.2509804, 0.2, 1)
+theme_override_font_sizes/font_size = 25
+text = "???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Song4" type="Button" parent="Background/MarginContainer/VBoxMain/SongGrid" unique_id=1565491980]
+custom_minimum_size = Vector2(250, 350)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_q5fs0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xx2ao")
+
+[node name="VBoxCard" type="VBoxContainer" parent="Background/MarginContainer/VBoxMain/SongGrid/Song4" unique_id=1817305470]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="CharImage" type="TextureRect" parent="Background/MarginContainer/VBoxMain/SongGrid/Song4/VBoxCard" unique_id=189446814]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_m4625")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CharName" type="Label" parent="Background/MarginContainer/VBoxMain/SongGrid/Song4/VBoxCard" unique_id=1212291060]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.36078432, 0.2509804, 0.2, 1)
+theme_override_font_sizes/font_size = 25
+text = "???"
+horizontal_alignment = 1
+vertical_alignment = 1

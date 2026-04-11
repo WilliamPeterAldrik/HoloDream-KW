@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://cpsy4508ksnlg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_370kx"]
+bg_color = Color(0.95070714, 0.9152335, 0.9251824, 1)
+corner_detail = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_370kx"]
+line_spacing = 50.0
+font_size = 50
+font_color = Color(1, 0.2784314, 0.49411765, 1)
+outline_size = 25
+
+[node name="MainMenu" type="Control" unique_id=1487388732]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="Panel" parent="." unique_id=1663654557]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_370kx")
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Background" unique_id=1997566443]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 50
+metadata/_edit_use_anchors_ = true
+
+[node name="MainLayout" type="VBoxContainer" parent="Background/MarginContainer" unique_id=896911999]
+layout_mode = 2
+theme_override_constants/separation = 225
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="Background/MarginContainer/MainLayout" unique_id=1199423275]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Rhythm Hit!"
+label_settings = SubResource("LabelSettings_370kx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuList" type="VBoxContainer" parent="Background/MarginContainer/MainLayout" unique_id=149847378]
+layout_mode = 2
+
+[node name="Start" type="Button" parent="Background/MarginContainer/MainLayout/MenuList" unique_id=322236787]
+layout_mode = 2
+text = "Start"
+
+[node name="Character" type="Button" parent="Background/MarginContainer/MainLayout/MenuList" unique_id=282340579]
+layout_mode = 2
+text = "Character"
+
+[node name="Setting" type="Button" parent="Background/MarginContainer/MainLayout/MenuList" unique_id=1022526877]
+layout_mode = 2
+text = "Setting"
+
+[node name="Exit" type="Button" parent="Background/MarginContainer/MainLayout/MenuList" unique_id=1551180352]
+layout_mode = 2
+text = "Exit"
