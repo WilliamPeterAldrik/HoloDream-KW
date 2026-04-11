@@ -1,27 +1,142 @@
 [gd_scene format=3 uid="uid://yu27dedx4bb3"]
 
-[node name="Settings" type="PanelContainer" unique_id=562690640]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rqu6x"]
+bg_color = Color(1, 0.98039216, 0.9411765, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=543217734]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gwnfj"]
+bg_color = Color(1, 0.98039216, 0.9411765, 1)
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n3sn2"]
+bg_color = Color(0.8784314, 0.9098039, 0.9607843, 1)
+shadow_color = Color(0.3180198, 0.31801978, 0.31801975, 0.6)
+
+[sub_resource type="LabelSettings" id="LabelSettings_88l3f"]
+font_size = 40
+font_color = Color(0.9882353, 0.6901961, 0.49019608, 1)
+outline_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_ne78p"]
+font_size = 25
+font_color = Color(0.9882353, 0.6901961, 0.49019608, 1)
+
+[node name="Settings" type="Control" unique_id=1454082122]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="Panel" parent="." unique_id=1605354735]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rqu6x")
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Background" unique_id=1000058603]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxMain" type="VBoxContainer" parent="Background/MarginContainer" unique_id=1027955961]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="TopBar" type="HBoxContainer" parent="Background/MarginContainer/VBoxMain" unique_id=72967932]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=123570746]
+[node name="BackButton" type="Button" parent="Background/MarginContainer/VBoxMain/TopBar" unique_id=1446505738]
 layout_mode = 2
-text = "Setting"
+theme_override_colors/font_color = Color(0.9862748, 0.69134414, 0.49077195, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_gwnfj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_n3sn2")
+button_mask = 0
+text = "< Back"
 
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer/Label" unique_id=1317969316]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Speed" type="Label" parent="VBoxContainer/Label/GridContainer" unique_id=855782334]
+[node name="TitleLabel" type="Label" parent="Background/MarginContainer/VBoxMain/TopBar" unique_id=2092917737]
 layout_mode = 2
-text = "Speed"
+size_flags_horizontal = 3
+text = "Settings"
+label_settings = SubResource("LabelSettings_88l3f")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Latency" type="Label" parent="VBoxContainer/Label/GridContainer" unique_id=1911752581]
+[node name="CenterContainer" type="CenterContainer" parent="Background/MarginContainer/VBoxMain" unique_id=1117852883]
 layout_mode = 2
-text = "Latency"
+size_flags_vertical = 3
 
-[node name="FullScreen" type="Label" parent="VBoxContainer/Label/GridContainer" unique_id=673675212]
+[node name="SettingList" type="VBoxContainer" parent="Background/MarginContainer/VBoxMain/CenterContainer" unique_id=421684518]
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
-text = "Fullscreen"
+theme_override_constants/separation = 25
+
+[node name="SpeedRow" type="HBoxContainer" parent="Background/MarginContainer/VBoxMain/CenterContainer/SettingList" unique_id=1047881200]
+layout_mode = 2
+
+[node name="LabelSpeed" type="Label" parent="Background/MarginContainer/VBoxMain/CenterContainer/SettingList/SpeedRow" unique_id=692919486]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Speed (Scroll Speed)"
+label_settings = SubResource("LabelSettings_ne78p")
+
+[node name="SlideSpeed" type="HSlider" parent="Background/MarginContainer/VBoxMain/CenterContainer/SettingList/SpeedRow" unique_id=2044059405]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="LatencyRow" type="HBoxContainer" parent="Background/MarginContainer/VBoxMain/CenterContainer/SettingList" unique_id=1099722658]
+layout_mode = 2
+
+[node name="LabelLatency" type="Label" parent="Background/MarginContainer/VBoxMain/CenterContainer/SettingList/LatencyRow" unique_id=1973725848]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Audio Latency (ms)"
+label_settings = SubResource("LabelSettings_ne78p")
+
+[node name="SpinBox" type="SpinBox" parent="Background/MarginContainer/VBoxMain/CenterContainer/SettingList/LatencyRow" unique_id=1692246299]
+layout_mode = 2
+min_value = -500.0
+max_value = 500.0
+suffix = "ms"
+
+[node name="FullScrRow" type="HBoxContainer" parent="Background/MarginContainer/VBoxMain/CenterContainer/SettingList" unique_id=651424128]
+layout_mode = 2
+
+[node name="LabelFullScr" type="Label" parent="Background/MarginContainer/VBoxMain/CenterContainer/SettingList/FullScrRow" unique_id=615735243]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Full Screen"
+label_settings = SubResource("LabelSettings_ne78p")
+
+[node name="CheckBox" type="CheckBox" parent="Background/MarginContainer/VBoxMain/CenterContainer/SettingList/FullScrRow" unique_id=1603668551]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VolumeRow" type="HBoxContainer" parent="Background/MarginContainer/VBoxMain/CenterContainer/SettingList" unique_id=808359826]
+layout_mode = 2
+
+[node name="LabelVolume" type="Label" parent="Background/MarginContainer/VBoxMain/CenterContainer/SettingList/VolumeRow" unique_id=946535122]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Master Volume"
+label_settings = SubResource("LabelSettings_ne78p")
+
+[node name="SlideVolume" type="HSlider" parent="Background/MarginContainer/VBoxMain/CenterContainer/SettingList/VolumeRow" unique_id=2082868139]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4

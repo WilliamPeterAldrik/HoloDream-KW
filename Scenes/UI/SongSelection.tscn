@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://dg57ekfmomrk1" path="res://Assets/Sprites/Reine/Idle/Reine Idle-1.png.png" id="2_be208"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o1m4t"]
-bg_color = Color(0.8784314, 0.9098039, 0.9607843, 1)
+bg_color = Color(0.8784314, 0.9607843, 0.9137255, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v6w75"]
-bg_color = Color(0.8784314, 0.9098039, 0.9607843, 1)
+bg_color = Color(0.8784314, 0.9607843, 0.9137255, 1)
 border_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8c456"]
@@ -16,7 +16,7 @@ shadow_color = Color(0.3180198, 0.31801978, 0.31801975, 0.6)
 
 [sub_resource type="LabelSettings" id="LabelSettings_or2x4"]
 font_size = 40
-font_color = Color(0.53428954, 0.697679, 0.8579754, 1)
+font_color = Color(0.5175253, 0.7696872, 0.6379814, 1)
 outline_size = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q5fs0"]
@@ -71,7 +71,7 @@ alignment = 1
 
 [node name="BackButton" type="Button" parent="Background/MarginContainer/VBoxMain/TopBar" unique_id=21785344]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.53333336, 0.69803923, 0.85882354, 1)
+theme_override_colors/font_color = Color(0.5176471, 0.76862746, 0.6392157, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_v6w75")
