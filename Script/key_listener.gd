@@ -30,10 +30,16 @@ var ok_press_score: float = 20
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$GlowOverlay.frame = frame 
+	Signals.CreateFallingKey.connect(CreateFallingKey)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
+	if Input.is_action_just_pressed(key_name):
+		Signals.KeyListenerPress.emit(key_name, frame)
+	
+	
 	# Kalo lewat layar, dihapus
 	while falling_key_queue.size() > 0:
 		var front_key = falling_key_queue.front()
@@ -93,25 +99,17 @@ func _process(delta: float) -> void:
 	
 	
 
+# Bikin Key nya jatoh
 func CreateFallingKey(button_name: String):
 	if button_name == key_name:
 		var fk_inst = falling_key.instantiate()
 		get_tree().get_root().call_deferred("add_child", fk_inst)
-		fk_inst.Setup(position.x, frame + 4)
-		
-		falling_key_queue.push_back(fk_inst)
-
-
-# Bikin Key nya jatoh
-func createFallingKey():
-	var fk_inst = falling_key.instantiate()
-	get_tree().get_root().call_deferred("add_child", fk_inst)
-	fk_inst.setup(position.x, frame)
+		fk_inst.setup(position.x, frame)
 	
-	falling_key_queue.push_back(fk_inst)
+		falling_key_queue.push_back(fk_inst)
 
 # Buat Testing Munculin Key nya
 func _on_random_spawn_timeout() -> void:
-	createFallingKey()
+	#CreateFallingKey()
 	$RandomSpawn.wait_time = randf_range(1, 3)
 	$RandomSpawn.start()

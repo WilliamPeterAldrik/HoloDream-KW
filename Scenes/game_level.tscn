@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://c0oqy31gicygt" path="res://Scenes/key_listener.tscn" id="1_jcjmw"]
 [ext_resource type="Texture2D" uid="uid://dopgk68hf4i7e" path="res://Assets/Backgrounds/origbig.png" id="1_u7uub"]
-[ext_resource type="PackedScene" uid="uid://bhoxtfutuhl4m" path="res://Scenes/falling_key.tscn" id="2_jtjkd"]
 [ext_resource type="PackedScene" uid="uid://ftreitpbdwlw" path="res://Scenes/game_ui.tscn" id="3_ht4rx"]
+[ext_resource type="PackedScene" uid="uid://l6dp5b2v8dqr" path="res://Scenes/level_editor.tscn" id="4_u7uub"]
 
 [sub_resource type="Environment" id="Environment_6mi8o"]
 background_mode = 3
@@ -39,22 +39,9 @@ position = Vector2(741, 521)
 frame = 3
 key_name = "Button_k"
 
-[node name="FallingLeft" parent="." unique_id=481368521 instance=ExtResource("2_jtjkd")]
-position = Vector2(419, -49)
-
-[node name="FallingDown" parent="." unique_id=1281807794 instance=ExtResource("2_jtjkd")]
-position = Vector2(525, -49)
-frame = 1
-
-[node name="FallingRight" parent="." unique_id=1893039963 instance=ExtResource("2_jtjkd")]
-position = Vector2(638, -49)
-frame = 2
-
-[node name="FallingUp" parent="." unique_id=1369105128 instance=ExtResource("2_jtjkd")]
-position = Vector2(741, -49)
-frame = 3
-
 [node name="GameUI" parent="." unique_id=630694922 instance=ExtResource("3_ht4rx")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=464683081]
 environment = SubResource("Environment_6mi8o")
+
+[node name="LevelEditor" parent="." unique_id=2026963895 instance=ExtResource("4_u7uub")]

@@ -3,7 +3,7 @@ extends Sprite2D
 # kecepatan key nya jatoh
 # TODO: di setting, bikin bisa ganti kecepatan jatoh
 @export
-var fall_speed: float = 3.5
+var fall_speed: float = 2.5
 # Posisi y awal key yg jatoh 
 var init_y_pos: float = -360
 
@@ -24,7 +24,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	global_position += Vector2(0, fall_speed)
+	var calculated_speed = (pass_threshold - init_y_pos) / 2.0
+	global_position += Vector2(0, calculated_speed * delta)
 	
 	# Indikator key udh lewat apa blom
 	if global_position.y > pass_threshold and not $Timer.is_stopped():
