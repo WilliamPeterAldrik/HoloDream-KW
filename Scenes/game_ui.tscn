@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ftreitpbdwlw"]
 
 [ext_resource type="Script" uid="uid://btyic6baygkox" path="res://Script/game_ui.gd" id="1_gek4i"]
+[ext_resource type="FontFile" uid="uid://fmak0w1qjbbl" path="res://Assets/Fonts/atop-font/Atop-R99O3.ttf" id="2_bw2rt"]
 
 [node name="GameUI" type="Control" unique_id=630694922]
 layout_mode = 3
@@ -16,16 +17,22 @@ script = ExtResource("1_gek4i")
 [node name="ScoreLabel" type="RichTextLabel" parent="." unique_id=1234076331]
 unique_name_in_owner = true
 layout_mode = 0
-offset_right = 191.0
+offset_right = 566.0
 offset_bottom = 67.0
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("2_bw2rt")
 theme_override_font_sizes/normal_font_size = 41
-text = "0 pts"
+text = " 0 pts"
+scroll_active = false
 
 [node name="ComboLabel" type="RichTextLabel" parent="." unique_id=1342559591]
 unique_name_in_owner = true
 layout_mode = 0
 offset_top = 55.0
-offset_right = 230.0
+offset_right = 547.0
 offset_bottom = 122.0
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("2_bw2rt")
 theme_override_font_sizes/normal_font_size = 41
-text = "0X COMBO"
+text = " 0X COMBO"
+scroll_active = false

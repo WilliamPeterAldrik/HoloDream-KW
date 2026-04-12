@@ -99,6 +99,7 @@ theme_override_fonts/normal_font = ExtResource("2_fbxjk")
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "[center]MISS"
+scroll_active = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1638143196]
 libraries/ = SubResource("AnimationLibrary_vc2wm")
