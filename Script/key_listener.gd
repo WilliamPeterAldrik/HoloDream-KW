@@ -4,7 +4,11 @@ extends Sprite2D
 @onready
 var falling_key = preload("res://Scenes/falling_key.tscn")
 
-# S kiri, D Bawah, K kanan, L Atas
+# Preload scene score text when pressed
+@onready
+var score_text = preload("res://Scenes/score_press_text.tscn")
+
+# D kiri, F Bawah, J kanan, Kx Atas
 @export
 var key_name: String = ""
 
@@ -44,19 +48,29 @@ func _process(delta: float) -> void:
 				if is_instance_valid(key_to_pop):
 					var distance_from_pass = abs(key_to_pop.pass_threshold - key_to_pop.global_position.y)
 					
+					var press_score_text = ""
 					if distance_from_pass < perfect_press_threshold:
 						Signals.IncrementScore.emit(perfect_press_score)
+						press_score_text = "PERFECT"
 					elif distance_from_pass < great_press_threshold:
 						Signals.IncrementScore.emit(great_press_score)
+						press_score_text = "GREAT"
 					elif distance_from_pass < good_press_threshold:
 						Signals.IncrementScore.emit(good_press_score)
+						press_score_text = "GOOD"
 					elif distance_from_pass < ok_press_threshold:
 						Signals.IncrementScore.emit(ok_press_score)
+						press_score_text = "OK"
 					else:
-#						Miss
+						press_score_text = "MISS"
 						pass
 					
 					key_to_pop.queue_free()
+					
+					var st_inst = score_text.instantiate()
+					get_tree().get_root().call_deferred("add_child", st_inst)
+					st_inst.SetTextInfo(press_score_text)
+					st_inst.global_position = global_position
 
 # Bikin Key nya jatoh
 func createFallingKey():
