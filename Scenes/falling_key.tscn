@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://bhoxtfutuhl4m"]
 
-[ext_resource type="Texture2D" uid="uid://cgaeen8jq0a7j" path="res://Assets/Sprites/temporary-delete_soon/temp-arrow-spritesheet.png" id="1_o7l7b"]
+[ext_resource type="Texture2D" uid="uid://co7x71jsoc0ii" path="res://Assets/Sprites/Arrows-Falling.png" id="1_plh85"]
 [ext_resource type="Script" uid="uid://b7hxf8fs62dqu" path="res://Script/falling_key.gd" id="2_plh85"]
 
 [node name="FallingKey" type="Sprite2D" unique_id=481368521]
-texture = ExtResource("1_o7l7b")
+scale = Vector2(7, 7)
+texture = ExtResource("1_plh85")
 hframes = 4
 script = ExtResource("2_plh85")
 fall_speed = 5.0

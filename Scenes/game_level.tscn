@@ -1,14 +1,24 @@
 [gd_scene format=3 uid="uid://bj56kop2sl4qw"]
 
 [ext_resource type="PackedScene" uid="uid://c0oqy31gicygt" path="res://Scenes/key_listener.tscn" id="1_jcjmw"]
+[ext_resource type="Texture2D" uid="uid://dopgk68hf4i7e" path="res://Assets/Backgrounds/origbig.png" id="1_u7uub"]
 [ext_resource type="PackedScene" uid="uid://bhoxtfutuhl4m" path="res://Scenes/falling_key.tscn" id="2_jtjkd"]
 [ext_resource type="PackedScene" uid="uid://ftreitpbdwlw" path="res://Scenes/game_ui.tscn" id="3_ht4rx"]
+
+[sub_resource type="Environment" id="Environment_6mi8o"]
+background_mode = 3
+glow_enabled = true
 
 [node name="GameLevel" type="Node2D" unique_id=342435873]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1095765163]
 position = Vector2(576, 273)
 offset = Vector2(0, 50)
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1995071583]
+position = Vector2(576, 324)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_u7uub")
 
 [node name="LeftArrow" parent="." unique_id=1457277051 instance=ExtResource("1_jcjmw")]
 position = Vector2(419, 521)
@@ -45,3 +55,6 @@ position = Vector2(741, -49)
 frame = 3
 
 [node name="GameUI" parent="." unique_id=630694922 instance=ExtResource("3_ht4rx")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=464683081]
+environment = SubResource("Environment_6mi8o")

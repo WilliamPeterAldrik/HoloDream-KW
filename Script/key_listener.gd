@@ -29,7 +29,7 @@ var ok_press_score: float = 20
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	$GlowOverlay.frame = frame 
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -59,8 +59,8 @@ func _process(delta: float) -> void:
 			if is_instance_valid(key_to_pop):
 				var distance_from_pass = abs(key_to_pop.pass_threshold - key_to_pop.global_position.y)
 				
-				#$AnimationPlayer.stop()
-				#$AnimationPlayer.play("key_hit")
+				$AnimationPlayer.stop()
+				$AnimationPlayer.play("key_hit")
 				
 				var press_score_text: String = ""
 				if distance_from_pass < perfect_press_threshold:

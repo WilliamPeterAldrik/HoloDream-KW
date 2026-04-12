@@ -1,9 +1,48 @@
 [gd_scene format=3 uid="uid://c0oqy31gicygt"]
 
-[ext_resource type="Texture2D" uid="uid://b0rxngcwv4qwg" path="res://Assets/Sprites/temporary-delete_soon/temp-arrow-bnw-spritesheet.png" id="1_rgl2n"]
+[ext_resource type="Texture2D" uid="uid://cftvbxpk7qryb" path="res://Assets/Sprites/Arrows-Listener.png" id="1_rgl2n"]
 [ext_resource type="Script" uid="uid://bvatj4ur1fewa" path="res://Script/key_listener.gd" id="2_rgl2n"]
+[ext_resource type="Texture2D" uid="uid://co7x71jsoc0ii" path="res://Assets/Sprites/Arrows-Falling.png" id="3_vs4jh"]
+
+[sub_resource type="Animation" id="Animation_vs4jh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GlowOverlay:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1.4807141, 1.4807141, 1.4807141, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_s5uv3"]
+resource_name = "key_hit"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GlowOverlay:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1.4807141, 1.4807141, 1.4807141, 1), Color(1.4807141, 1.4807141, 1.4807141, 1), Color(1.4807141, 1.4807141, 1.4807141, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t1lqh"]
+_data = {
+&"RESET": SubResource("Animation_vs4jh"),
+&"key_hit": SubResource("Animation_s5uv3")
+}
 
 [node name="Key_Listener" type="Sprite2D" unique_id=1457277051]
+scale = Vector2(7, 7)
 texture = ExtResource("1_rgl2n")
 hframes = 4
 script = ExtResource("2_rgl2n")
@@ -11,5 +50,13 @@ script = ExtResource("2_rgl2n")
 [node name="RandomSpawn" type="Timer" parent="." unique_id=166003059]
 one_shot = true
 autostart = true
+
+[node name="GlowOverlay" type="Sprite2D" parent="." unique_id=1341715053]
+modulate = Color(1.4807141, 1.4807141, 1.4807141, 1)
+texture = ExtResource("3_vs4jh")
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2036881973]
+libraries/ = SubResource("AnimationLibrary_t1lqh")
 
 [connection signal="timeout" from="RandomSpawn" to="." method="_on_random_spawn_timeout"]
