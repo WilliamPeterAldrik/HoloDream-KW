@@ -52,17 +52,22 @@ func _process(delta: float) -> void:
 					if distance_from_pass < perfect_press_threshold:
 						Signals.IncrementScore.emit(perfect_press_score)
 						press_score_text = "PERFECT"
+						Signals.IncrementCombo.emit()
 					elif distance_from_pass < great_press_threshold:
 						Signals.IncrementScore.emit(great_press_score)
 						press_score_text = "GREAT"
+						Signals.IncrementCombo.emit()
 					elif distance_from_pass < good_press_threshold:
 						Signals.IncrementScore.emit(good_press_score)
 						press_score_text = "GOOD"
+						Signals.IncrementCombo.emit()
 					elif distance_from_pass < ok_press_threshold:
 						Signals.IncrementScore.emit(ok_press_score)
 						press_score_text = "OK"
+						Signals.IncrementCombo.emit()
 					else:
 						press_score_text = "MISS"
+						Signals.ResetCombo.emit()
 						pass
 					
 					key_to_pop.queue_free()
