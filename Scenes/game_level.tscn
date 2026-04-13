@@ -12,12 +12,12 @@ glow_enabled = true
 [node name="GameLevel" type="Node2D" unique_id=342435873]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1095765163]
-position = Vector2(576, 273)
+position = Vector2(576, 5)
 offset = Vector2(0, 50)
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1995071583]
-position = Vector2(576, 324)
-scale = Vector2(0.5, 0.5)
+position = Vector2(579, 50.99994)
+scale = Vector2(0.83480936, 0.92746913)
 texture = ExtResource("1_u7uub")
 
 [node name="LeftArrow" parent="." unique_id=1457277051 instance=ExtResource("1_jcjmw")]
@@ -40,6 +40,10 @@ frame = 3
 key_name = "Button_k"
 
 [node name="GameUI" parent="." unique_id=630694922 instance=ExtResource("3_ht4rx")]
+offset_left = -318.0
+offset_top = -448.0
+offset_right = -318.0
+offset_bottom = -448.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=464683081]
 environment = SubResource("Environment_6mi8o")

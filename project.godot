@@ -19,6 +19,12 @@ config/icon="res://icon.svg"
 
 Signals="*uid://cu3xo5om6wjpf"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1200
+window/size/mode=2
+
 [input]
 
 button_S={

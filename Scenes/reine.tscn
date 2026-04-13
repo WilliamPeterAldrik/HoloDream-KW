@@ -233,7 +233,7 @@ animations = [{
 
 [node name="Reine" type="Node2D" unique_id=109757464]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1017037832]
+[node name="AnimatedSpriteReine" type="AnimatedSprite2D" parent="." unique_id=1017037832]
 scale = Vector2(5.3999996, 5.3999996)
 sprite_frames = SubResource("SpriteFrames_nwv7k")
 animation = &"Dancing"
