@@ -234,20 +234,7 @@ mouse_filter = 0
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="PlayButton" type="Button" parent="Background/MarginContainer/VBoxMain/TopBar2" unique_id=1376824034]
-layout_mode = 2
-mouse_filter = 1
-theme_override_colors/font_color = Color(0.5176471, 0.76862746, 0.6392157, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_0qs5r")
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_v6w75")
-theme_override_styles/hover = SubResource("StyleBoxFlat_8c456")
-button_mask = 0
-text = "Play >"
-
 [connection signal="pressed" from="Background/MarginContainer/VBoxMain/TopBar/BackButton" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Background/MarginContainer/VBoxMain/SongGrid/dahlahSong" to="." method="_on_dahlah_selected"]
 [connection signal="pressed" from="Background/MarginContainer/VBoxMain/SongGrid/GateOpenSong" to="." method="_on_gateopen_selected"]
 [connection signal="pressed" from="Background/MarginContainer/VBoxMain/SongGrid/TetorisSong" to="." method="_on_tetoris_selected"]
-[connection signal="pressed" from="Background/MarginContainer/VBoxMain/TopBar2/PlayButton" to="." method="_on_play_button_pressed"]

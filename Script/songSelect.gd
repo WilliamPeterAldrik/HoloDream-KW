@@ -41,11 +41,18 @@ func _on_play_button_pressed():
 func _on_dahlah_selected():
 	GameManager.selected_song = "DAHLAH"
 	print("Lagu diklik: DAHLAH")
+	_start_game()
 
 func _on_gateopen_selected():
 	GameManager.selected_song = "GATE_OPEN_START"
 	print("Lagu diklik: GATE_OPEN_START")
+	_start_game()
 
 func _on_tetoris_selected():
 	GameManager.selected_song = "TETORIS"
 	print("Lagu diklik: TETORIS")
+	_start_game()
+
+func _start_game():
+	print("--> SUKSES: Memulai game dengan lagu: ", GameManager.selected_song)
+	play_pressed.emit()
