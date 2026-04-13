@@ -21,10 +21,10 @@ var key_name: String = ""
 var falling_key_queue = []
 
 # Jika distance_from_pass lebih kecil dari threshold, beri score tersebut
-var perfect_press_threshold: float = 50
-var great_press_threshold: float = 80
-var good_press_threshold: float = 100
-var ok_press_threshold: float = 150
+var perfect_press_threshold: float = 80
+var great_press_threshold: float = 100
+var good_press_threshold: float = 120
+var ok_press_threshold: float = 180
 
 # Score untuk setiap threshold
 var perfect_press_score: float = 250
@@ -110,7 +110,7 @@ func _process(delta: float) -> void:
 				var st_inst = score_text.instantiate()
 				get_tree().get_root().call_deferred("add_child", st_inst)
 				st_inst.SetTextInfo(press_score_text)
-				st_inst.global_position = global_position + Vector2(0, -20)
+				st_inst.global_position = global_position + Vector2(0, -100)
 	
 	
 	
