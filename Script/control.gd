@@ -22,20 +22,20 @@ func clear_active_scene():
 
 func show_main_menu():
 	clear_active_scene()
-	if not menu_main:
-		menu_main = load("res://Scenes/UI/MainMenu.tscn").instantiate()
-		add_child(menu_main)
+	if menu_main:
+		menu_main.free()
+		menu_main = null
 		
-		# Sambungkan sinyal Menu Utama
-		# UBAH DI SINI: Tombol Start sekarang langsung memanggil load_song_selection
-		menu_main.start_pressed.connect(load_song_selection) 
-		menu_main.setting_pressed.connect(load_setting)
-		menu_main.exit_pressed.connect(get_tree().quit)
-	else:
-		menu_main.show()
+	menu_main = load("res://Scenes/UI/MainMenu.tscn").instantiate()
+	add_child(menu_main)
+	
+	# Sambungkan sinyal Menu Utama
+	# UBAH DI SINI: Tombol Start sekarang langsung memanggil load_song_selection
+	menu_main.start_pressed.connect(load_song_selection) 
+	menu_main.setting_pressed.connect(load_setting)
+	menu_main.exit_pressed.connect(get_tree().quit)
 
 func load_song_selection():
-	if menu_main: menu_main.hide()
 	clear_active_scene()
 	
 	active_scene = scene_song.instantiate()
@@ -55,7 +55,6 @@ func load_gameplay():
 	print("[RADAR 4] SELAMAT BERMAIN!")
 
 func load_setting():
-	if menu_main: menu_main.hide()
 	clear_active_scene()
 	
 	active_scene = scene_setting.instantiate()

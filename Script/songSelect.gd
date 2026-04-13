@@ -24,17 +24,7 @@ func _ready():
 func _on_back_pressed():
 	print("[RADAR 1] Tombol BACK diklik!")
 	back_pressed.emit()
-	
-func _on_play_button_pressed():
-	print("[RADAR 1] Tombol PLAY diklik!")
-	
-	# Cek apakah lagu sudah dipilih
-	if GameManager.selected_song == "":
-		print("--> GAGAL: Kamu belum memilih lagu!")
-		return
-		
-	print("--> SUKSES: Mengirim sinyal play_pressed untuk lagu: ", GameManager.selected_song)
-	play_pressed.emit()
+	# TODO: Balik ke main menu on selection
 	
 # --- FUNGSI PILIH LAGU ---
 
@@ -56,3 +46,7 @@ func _on_tetoris_selected():
 func _start_game():
 	print("--> SUKSES: Memulai game dengan lagu: ", GameManager.selected_song)
 	play_pressed.emit()
+
+
+func _on_tetoris_song_mouse_entered() -> void:
+	pass # Replace with function body.

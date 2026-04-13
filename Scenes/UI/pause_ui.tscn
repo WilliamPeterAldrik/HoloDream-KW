@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://bpadsw2jwduda"]
+
+[ext_resource type="Script" uid="uid://b8bvdsokuhphe" path="res://Script/pause_ui.gd" id="1_8dpcc"]
+[ext_resource type="Texture2D" uid="uid://bbns8cu6qnquj" path="res://Assets/Buttons/Retry Button.png" id="1_pr555"]
+[ext_resource type="Texture2D" uid="uid://cfo1c3pbl3ioq" path="res://Assets/Buttons/Retry Button Pressed.png" id="2_8dpcc"]
+[ext_resource type="Texture2D" uid="uid://c60g4pdukva2e" path="res://Assets/Buttons/Continue Button.png" id="3_qjk66"]
+[ext_resource type="Texture2D" uid="uid://b3wuxf2ysexwo" path="res://Assets/Buttons/Continue Button Pressed.png" id="4_1yf2f"]
+[ext_resource type="Texture2D" uid="uid://di3slt8aw3rh7" path="res://Assets/Buttons/Quit Button.png" id="5_rqg0w"]
+[ext_resource type="Texture2D" uid="uid://kiad2tl555ul" path="res://Assets/Buttons/Quit Button Pressed.png" id="6_lsyt1"]
+
+[node name="PauseUI" type="Control" unique_id=397506494]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_8dpcc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=974649235]
+
+[node name="RetryButton" type="TextureButton" parent="." unique_id=2093804755]
+layout_mode = 0
+offset_left = 493.99997
+offset_top = 129.0
+offset_right = 544.0
+offset_bottom = 179.0
+scale = Vector2(4.039999, 4.039999)
+texture_normal = ExtResource("1_pr555")
+texture_pressed = ExtResource("2_8dpcc")
+
+[node name="ContinueButton" type="TextureButton" parent="." unique_id=211043183]
+layout_mode = 0
+offset_left = 1055.0
+offset_top = 129.0
+offset_right = 1105.0
+offset_bottom = 179.0
+scale = Vector2(4.039999, 4.039999)
+texture_normal = ExtResource("3_qjk66")
+texture_pressed = ExtResource("4_1yf2f")
+
+[node name="QuitButton" type="TextureButton" parent="." unique_id=1557124887]
+layout_mode = 0
+offset_left = -67.99999
+offset_top = 129.0
+offset_right = -17.999992
+offset_bottom = 179.0
+scale = Vector2(4.039999, 4.039999)
+texture_normal = ExtResource("5_rqg0w")
+texture_pressed = ExtResource("6_lsyt1")

@@ -8,6 +8,7 @@ func _ready():
 	Signals.IncrementScore.connect(IncrementScore)
 	Signals.IncrementCombo.connect(IncrementCombo)
 	Signals.ResetCombo.connect(ResetCombo)
+	$PauseButton.pressed.connect(_on_pause_button_pressed)
 	
 	ResetCombo()
 
@@ -22,3 +23,14 @@ func IncrementCombo():
 func ResetCombo():
 	combo_count = 0
 	%ComboLabel.text = ""
+
+func _on_pause_button_pressed() -> void:
+	get_node("../PauseUI").show()
+	get_node("../LeftArrow").hide()
+	get_node("../DownArrow").hide()
+	get_node("../RightArrow").hide()
+	get_node("../UpArrow").hide()
+	get_node("../LevelEditor").hide()
+	hide()
+	get_tree().paused = true
+	# TODO: Pause the playtime

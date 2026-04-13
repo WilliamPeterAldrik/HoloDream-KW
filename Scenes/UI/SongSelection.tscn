@@ -82,7 +82,6 @@ theme_override_fonts/font = ExtResource("2_0qs5r")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_v6w75")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8c456")
-button_mask = 0
 text = "< Back"
 
 [node name="TitleLabel" type="Label" parent="Background/MarginContainer/VBoxMain/TopBar" unique_id=681946821]
@@ -110,9 +109,13 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_xx2ao")
 
 [node name="VBoxCard" type="VBoxContainer" parent="Background/MarginContainer/VBoxMain/SongGrid/dahlahSong" unique_id=1791260457]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_top = 0.41500002
+anchor_right = 0.99200004
+anchor_bottom = 0.72700006
+offset_top = -0.42001343
+offset_right = 1.9999847
+offset_bottom = -0.19604492
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 12
@@ -142,9 +145,13 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_xx2ao")
 
 [node name="VBoxCard" type="VBoxContainer" parent="Background/MarginContainer/VBoxMain/SongGrid/GateOpenSong" unique_id=145051430]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_top = 0.40600002
+anchor_right = 1.044
+anchor_bottom = 0.71800005
+offset_top = 0.111968994
+offset_right = -11.0
+offset_bottom = 0.3359375
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 12
@@ -166,7 +173,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TetorisSong" type="Button" parent="Background/MarginContainer/VBoxMain/SongGrid" unique_id=1711249622]
-custom_minimum_size = Vector2(250, 350)
+custom_minimum_size = Vector2(250, 200)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/normal = SubResource("StyleBoxFlat_q5fs0")
@@ -174,9 +181,12 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_xx2ao")
 
 [node name="VBoxCard" type="VBoxContainer" parent="Background/MarginContainer/VBoxMain/SongGrid/TetorisSong" unique_id=1701898575]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
+anchor_top = 0.40300003
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.71300006
+offset_top = 10.955963
+offset_bottom = 13.075928
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 12

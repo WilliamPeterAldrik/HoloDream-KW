@@ -1,24 +1,31 @@
 [gd_scene format=3 uid="uid://bj56kop2sl4qw"]
 
 [ext_resource type="PackedScene" uid="uid://c0oqy31gicygt" path="res://Scenes/key_listener.tscn" id="1_jcjmw"]
+[ext_resource type="Script" uid="uid://b1tq221dk8inw" path="res://Script/game_level.gd" id="1_mql7d"]
 [ext_resource type="Texture2D" uid="uid://dopgk68hf4i7e" path="res://Assets/Backgrounds/origbig.png" id="1_u7uub"]
 [ext_resource type="PackedScene" uid="uid://ftreitpbdwlw" path="res://Scenes/game_ui.tscn" id="3_ht4rx"]
 [ext_resource type="PackedScene" uid="uid://l6dp5b2v8dqr" path="res://Scenes/level_editor.tscn" id="4_u7uub"]
+[ext_resource type="PackedScene" uid="uid://bpadsw2jwduda" path="res://Scenes/UI/pause_ui.tscn" id="5_6mi8o"]
 
 [sub_resource type="Environment" id="Environment_6mi8o"]
 background_mode = 3
 glow_enabled = true
 
 [node name="GameLevel" type="Node2D" unique_id=342435873]
+position = Vector2(20, 0)
+script = ExtResource("1_mql7d")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1095765163]
-position = Vector2(576, 5)
+position = Vector2(603, 158)
 offset = Vector2(0, 50)
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1995071583]
+visible = false
 position = Vector2(579, 50.99994)
 scale = Vector2(0.83480936, 0.92746913)
 texture = ExtResource("1_u7uub")
+
+[node name="LevelEditor" parent="." unique_id=2026963895 instance=ExtResource("4_u7uub")]
 
 [node name="LeftArrow" parent="." unique_id=1457277051 instance=ExtResource("1_jcjmw")]
 position = Vector2(419, 521)
@@ -40,12 +47,14 @@ frame = 3
 key_name = "Button_k"
 
 [node name="GameUI" parent="." unique_id=630694922 instance=ExtResource("3_ht4rx")]
-offset_left = -318.0
-offset_top = -448.0
-offset_right = -318.0
-offset_bottom = -448.0
+process_mode = 3
+offset_left = -199.0
+offset_top = -182.0
+offset_right = -199.0
+offset_bottom = -182.0
+metadata/_edit_use_anchors_ = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=464683081]
 environment = SubResource("Environment_6mi8o")
 
-[node name="LevelEditor" parent="." unique_id=2026963895 instance=ExtResource("4_u7uub")]
+[node name="PauseUI" parent="." unique_id=1614231227 instance=ExtResource("5_6mi8o")]

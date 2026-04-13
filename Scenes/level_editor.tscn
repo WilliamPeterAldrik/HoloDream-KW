@@ -7,4 +7,9 @@ script = ExtResource("1_5o76e")
 
 [node name="MusicPlayer" type="AudioStreamPlayer2D" parent="." unique_id=272133840]
 
+[node name="BackgroundVideo" type="VideoStreamPlayer" parent="." unique_id=1001936281]
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
 [connection signal="finished" from="MusicPlayer" to="." method="_on_music_player_finished"]

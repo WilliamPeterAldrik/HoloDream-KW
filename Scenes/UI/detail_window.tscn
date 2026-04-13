@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://c1ag0cahltkpa"]
+
+[node name="DetailWindow" type="Control" unique_id=2007584917]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2008746393]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SongImage" type="TextureRect" parent="VBoxContainer" unique_id=1948006964]
+layout_mode = 2
+size_flags_vertical = 3
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Title" type="Label" parent="VBoxContainer" unique_id=379520313]
+layout_mode = 2
+
+[node name="Artist" type="Label" parent="VBoxContainer" unique_id=1340043847]
+layout_mode = 2
+
+[node name="Duration" type="Label" parent="VBoxContainer" unique_id=1466761437]
+layout_mode = 2
+
+[node name="Difficulty" type="Label" parent="VBoxContainer" unique_id=1743175212]
+layout_mode = 2

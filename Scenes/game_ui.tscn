@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://btyic6baygkox" path="res://Script/game_ui.gd" id="1_gek4i"]
 [ext_resource type="FontFile" uid="uid://fmak0w1qjbbl" path="res://Assets/Fonts/atop-font/Atop-R99O3.ttf" id="2_bw2rt"]
+[ext_resource type="Texture2D" uid="uid://cvroyopt5enkq" path="res://Assets/Buttons/Pause Button.png" id="3_x63ue"]
+[ext_resource type="Texture2D" uid="uid://mh84br3vstur" path="res://Assets/Buttons/Pause Button Pressed.png" id="4_gjn1n"]
 
 [node name="GameUI" type="Control" unique_id=630694922]
 layout_mode = 3
@@ -36,3 +38,12 @@ theme_override_fonts/normal_font = ExtResource("2_bw2rt")
 theme_override_font_sizes/normal_font_size = 41
 text = " 0X COMBO"
 scroll_active = false
+
+[node name="PauseButton" type="TextureButton" parent="." unique_id=1475169356]
+layout_mode = 0
+offset_left = 1475.9999
+offset_right = 1525.9999
+offset_bottom = 50.0
+scale = Vector2(1.9200097, 1.9200097)
+texture_normal = ExtResource("3_x63ue")
+texture_pressed = ExtResource("4_gjn1n")

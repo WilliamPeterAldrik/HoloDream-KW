@@ -6,6 +6,7 @@
 [node name="FallingKey" type="Sprite2D" unique_id=481368521]
 scale = Vector2(7, 7)
 texture = ExtResource("1_plh85")
+offset = Vector2(3, 0)
 hframes = 4
 script = ExtResource("2_plh85")
 fall_speed = 5.0
