@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="HoloDreams-KW"
-run/main_scene="uid://bj56kop2sl4qw"
+run/main_scene="uid://beja03gto486x"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Signals="*uid://cu3xo5om6wjpf"
+GameManager="*uid://cirgqpcj38wb5"
 
 [input]
 
