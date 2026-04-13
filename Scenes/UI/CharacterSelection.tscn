@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://cremgv4m63fqj"]
 
 [ext_resource type="Texture2D" uid="uid://cgyihqaut84y4" path="res://Assets/Sprites/Kaela/Idle/Kaela-Idle-1.png.png" id="1_m4625"]
+[ext_resource type="Script" uid="uid://dqou4xuedfhrx" path="res://Script/characterSect.gd" id="1_or2x4"]
 [ext_resource type="Texture2D" uid="uid://dg57ekfmomrk1" path="res://Assets/Sprites/Reine/Idle/Reine Idle-1.png.png" id="2_be208"]
+[ext_resource type="FontFile" uid="uid://fmak0w1qjbbl" path="res://Assets/Fonts/atop-font/Atop-R99O3.ttf" id="2_q5fs0"]
+[ext_resource type="Texture2D" uid="uid://ktib2sh2i1bn" path="res://Assets/Sprites/Villions/Villions_Idle.png" id="3_o1m4t"]
+[ext_resource type="Texture2D" uid="uid://d2dadvldnjgop" path="res://Assets/Sprites/Xavier/Xavier-1.png.png" id="4_or2x4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o1m4t"]
 bg_color = Color(0.8784314, 0.9098039, 0.9607843, 1)
@@ -38,6 +42,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_or2x4")
 
 [node name="Background" type="Panel" parent="." unique_id=1048004402]
 layout_mode = 1
@@ -73,6 +78,7 @@ alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0.53333336, 0.69803923, 0.85882354, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_q5fs0")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_v6w75")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8c456")
@@ -82,6 +88,7 @@ text = "< Back"
 [node name="TitleLabel" type="Label" parent="Background/MarginContainer/VBoxMain/TopBar" unique_id=681946821]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_q5fs0")
 text = "Select Character"
 label_settings = SubResource("LabelSettings_or2x4")
 horizontal_alignment = 1
@@ -117,6 +124,7 @@ stretch_mode = 5
 [node name="CharName" type="Label" parent="Background/MarginContainer/VBoxMain/CharacterGrid/Kaela/VBoxCard" unique_id=1694600823]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.36078432, 0.2509804, 0.2, 1)
+theme_override_fonts/font = ExtResource("2_q5fs0")
 theme_override_font_sizes/font_size = 25
 text = "Kaela"
 horizontal_alignment = 1
@@ -147,18 +155,19 @@ stretch_mode = 5
 [node name="CharName" type="Label" parent="Background/MarginContainer/VBoxMain/CharacterGrid/Reine/VBoxCard" unique_id=262085145]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.36078432, 0.2509804, 0.2, 1)
+theme_override_fonts/font = ExtResource("2_q5fs0")
 theme_override_font_sizes/font_size = 25
 text = "Reine"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Char3" type="Button" parent="Background/MarginContainer/VBoxMain/CharacterGrid" unique_id=1046253602]
+[node name="Villions" type="Button" parent="Background/MarginContainer/VBoxMain/CharacterGrid" unique_id=1046253602]
 custom_minimum_size = Vector2(250, 350)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_q5fs0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xx2ao")
 
-[node name="VBoxCard" type="VBoxContainer" parent="Background/MarginContainer/VBoxMain/CharacterGrid/Char3" unique_id=1734285393]
+[node name="VBoxCard" type="VBoxContainer" parent="Background/MarginContainer/VBoxMain/CharacterGrid/Villions" unique_id=1734285393]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -167,28 +176,29 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 12
 
-[node name="CharImage" type="TextureRect" parent="Background/MarginContainer/VBoxMain/CharacterGrid/Char3/VBoxCard" unique_id=1259977606]
+[node name="CharImage" type="TextureRect" parent="Background/MarginContainer/VBoxMain/CharacterGrid/Villions/VBoxCard" unique_id=1259977606]
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("1_m4625")
+texture = ExtResource("3_o1m4t")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="CharName" type="Label" parent="Background/MarginContainer/VBoxMain/CharacterGrid/Char3/VBoxCard" unique_id=1002630338]
+[node name="CharName" type="Label" parent="Background/MarginContainer/VBoxMain/CharacterGrid/Villions/VBoxCard" unique_id=1002630338]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.36078432, 0.2509804, 0.2, 1)
+theme_override_fonts/font = ExtResource("2_q5fs0")
 theme_override_font_sizes/font_size = 25
-text = "???"
+text = "Villions"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Char4" type="Button" parent="Background/MarginContainer/VBoxMain/CharacterGrid" unique_id=432138886]
+[node name="Xavier" type="Button" parent="Background/MarginContainer/VBoxMain/CharacterGrid" unique_id=432138886]
 custom_minimum_size = Vector2(250, 350)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_q5fs0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xx2ao")
 
-[node name="VBoxCard" type="VBoxContainer" parent="Background/MarginContainer/VBoxMain/CharacterGrid/Char4" unique_id=1922380578]
+[node name="VBoxCard" type="VBoxContainer" parent="Background/MarginContainer/VBoxMain/CharacterGrid/Xavier" unique_id=1922380578]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -197,17 +207,37 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 12
 
-[node name="CharImage" type="TextureRect" parent="Background/MarginContainer/VBoxMain/CharacterGrid/Char4/VBoxCard" unique_id=1589737807]
+[node name="CharImage" type="TextureRect" parent="Background/MarginContainer/VBoxMain/CharacterGrid/Xavier/VBoxCard" unique_id=1589737807]
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("1_m4625")
+texture = ExtResource("4_or2x4")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="CharName" type="Label" parent="Background/MarginContainer/VBoxMain/CharacterGrid/Char4/VBoxCard" unique_id=1243671690]
+[node name="CharName" type="Label" parent="Background/MarginContainer/VBoxMain/CharacterGrid/Xavier/VBoxCard" unique_id=1243671690]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.36078432, 0.2509804, 0.2, 1)
+theme_override_fonts/font = ExtResource("2_q5fs0")
 theme_override_font_sizes/font_size = 25
-text = "???"
+text = "Xavier"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TopBar2" type="HBoxContainer" parent="Background/MarginContainer/VBoxMain" unique_id=1593999505]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="NextButton" type="Button" parent="Background/MarginContainer/VBoxMain/TopBar2" unique_id=1248231079]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.53333336, 0.69803923, 0.85882354, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_q5fs0")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_v6w75")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8c456")
+button_mask = 0
+text = "Pick Song >"
+
+[connection signal="pressed" from="Background/MarginContainer/VBoxMain/TopBar/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/VBoxMain/TopBar2/NextButton" to="." method="_on_next_button_pressed"]

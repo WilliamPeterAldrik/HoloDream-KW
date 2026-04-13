@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://cpsy4508ksnlg"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_370kx"]
-bg_color = Color(0.95070714, 0.9152335, 0.9251824, 1)
-corner_detail = 15
+[ext_resource type="Script" uid="uid://bpidp7u7kgymu" path="res://Script/mainScene.gd" id="1_72sra"]
+[ext_resource type="Texture2D" uid="uid://cukattpvta22l" path="res://Assets/Backgrounds/pastel pink diamond pattern.jpg" id="1_g18y6"]
+[ext_resource type="FontFile" uid="uid://fmak0w1qjbbl" path="res://Assets/Fonts/atop-font/Atop-R99O3.ttf" id="2_mjmdf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_370kx"]
 line_spacing = 50.0
+font = ExtResource("2_mjmdf")
 font_size = 50
-font_color = Color(1, 0.2784314, 0.49411765, 1)
+font_color = Color(1, 0.45117003, 0.58011675, 1)
 outline_size = 25
 
 [node name="MainMenu" type="Control" unique_id=1487388732]
@@ -17,15 +18,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_72sra")
 
-[node name="Background" type="Panel" parent="." unique_id=1663654557]
+[node name="Background" type="TextureRect" parent="." unique_id=184314827]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_370kx")
+texture = ExtResource("1_g18y6")
 metadata/_edit_use_anchors_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="Background" unique_id=1997566443]
@@ -59,16 +61,21 @@ layout_mode = 2
 
 [node name="Start" type="Button" parent="Background/MarginContainer/MainLayout/MenuList" unique_id=322236787]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_mjmdf")
+theme_override_font_sizes/font_size = 35
 text = "Start"
-
-[node name="Character" type="Button" parent="Background/MarginContainer/MainLayout/MenuList" unique_id=282340579]
-layout_mode = 2
-text = "Character"
 
 [node name="Setting" type="Button" parent="Background/MarginContainer/MainLayout/MenuList" unique_id=1022526877]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_mjmdf")
+theme_override_font_sizes/font_size = 35
 text = "Setting"
 
 [node name="Exit" type="Button" parent="Background/MarginContainer/MainLayout/MenuList" unique_id=1551180352]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_mjmdf")
+theme_override_font_sizes/font_size = 35
 text = "Exit"
+
+[connection signal="pressed" from="Background/MarginContainer/MainLayout/MenuList/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/MainLayout/MenuList/Setting" to="." method="_on_setting_pressed"]

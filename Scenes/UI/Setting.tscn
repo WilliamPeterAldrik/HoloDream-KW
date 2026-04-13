@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://yu27dedx4bb3"]
 
+[ext_resource type="FontFile" uid="uid://fmak0w1qjbbl" path="res://Assets/Fonts/atop-font/Atop-R99O3.ttf" id="1_gwnfj"]
+[ext_resource type="Script" uid="uid://v6mljao8de0k" path="res://Script/settings.gd" id="1_n3sn2"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rqu6x"]
 bg_color = Color(1, 0.98039216, 0.9411765, 1)
 
@@ -12,6 +15,7 @@ bg_color = Color(0.8784314, 0.9098039, 0.9607843, 1)
 shadow_color = Color(0.3180198, 0.31801978, 0.31801975, 0.6)
 
 [sub_resource type="LabelSettings" id="LabelSettings_88l3f"]
+font = ExtResource("1_gwnfj")
 font_size = 40
 font_color = Color(0.9882353, 0.6901961, 0.49019608, 1)
 outline_size = 20
@@ -27,6 +31,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_n3sn2")
 
 [node name="Background" type="Panel" parent="." unique_id=1605354735]
 layout_mode = 1
@@ -62,6 +67,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0.9862748, 0.69134414, 0.49077195, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_gwnfj")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_gwnfj")
 theme_override_styles/hover = SubResource("StyleBoxFlat_n3sn2")
@@ -91,6 +97,7 @@ layout_mode = 2
 [node name="LabelSpeed" type="Label" parent="Background/MarginContainer/VBoxMain/CenterContainer/SettingList/SpeedRow" unique_id=692919486]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_gwnfj")
 text = "Speed (Scroll Speed)"
 label_settings = SubResource("LabelSettings_ne78p")
 
@@ -105,6 +112,7 @@ layout_mode = 2
 [node name="LabelLatency" type="Label" parent="Background/MarginContainer/VBoxMain/CenterContainer/SettingList/LatencyRow" unique_id=1973725848]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_gwnfj")
 text = "Audio Latency (ms)"
 label_settings = SubResource("LabelSettings_ne78p")
 
@@ -120,6 +128,7 @@ layout_mode = 2
 [node name="LabelFullScr" type="Label" parent="Background/MarginContainer/VBoxMain/CenterContainer/SettingList/FullScrRow" unique_id=615735243]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_gwnfj")
 text = "Full Screen"
 label_settings = SubResource("LabelSettings_ne78p")
 
@@ -133,6 +142,7 @@ layout_mode = 2
 [node name="LabelVolume" type="Label" parent="Background/MarginContainer/VBoxMain/CenterContainer/SettingList/VolumeRow" unique_id=946535122]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_gwnfj")
 text = "Master Volume"
 label_settings = SubResource("LabelSettings_ne78p")
 
@@ -140,3 +150,5 @@ label_settings = SubResource("LabelSettings_ne78p")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+
+[connection signal="pressed" from="Background/MarginContainer/VBoxMain/TopBar/BackButton" to="." method="_on_back_button_pressed"]

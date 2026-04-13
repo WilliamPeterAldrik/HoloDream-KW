@@ -2,5 +2,12 @@
 
 [ext_resource type="Script" uid="uid://dx7vogo4txg73" path="res://Script/control.gd" id="1_6p536"]
 
-[node name="Control" type="Node2D" unique_id=1812785965]
+[node name="Control" type="Control" unique_id=1624906936]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_6p536")
+metadata/_edit_use_anchors_ = true

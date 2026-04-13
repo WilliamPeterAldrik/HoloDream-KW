@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://cg4jlsc1vh63x"]
 
 [ext_resource type="Texture2D" uid="uid://cgyihqaut84y4" path="res://Assets/Sprites/Kaela/Idle/Kaela-Idle-1.png.png" id="1_m4625"]
-[ext_resource type="Texture2D" uid="uid://dg57ekfmomrk1" path="res://Assets/Sprites/Reine/Idle/Reine Idle-1.png.png" id="2_be208"]
+[ext_resource type="Script" uid="uid://cgffv4ulixlr2" path="res://Script/songSelect.gd" id="1_nbyc8"]
+[ext_resource type="Texture2D" uid="uid://bxtqev2swcqtj" path="res://Assets/SongCover/dahlahCover.jpg" id="1_ytmnh"]
+[ext_resource type="FontFile" uid="uid://fmak0w1qjbbl" path="res://Assets/Fonts/atop-font/Atop-R99O3.ttf" id="2_0qs5r"]
+[ext_resource type="Texture2D" uid="uid://casgsx4aqh3oq" path="res://Assets/SongCover/gateOpenCover.jpg" id="2_nbyc8"]
+[ext_resource type="Texture2D" uid="uid://k0g7gm8rjfdm" path="res://Assets/SongCover/tetorisCover.jpg" id="3_0qs5r"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o1m4t"]
 bg_color = Color(0.8784314, 0.9607843, 0.9137255, 1)
@@ -38,6 +42,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_nbyc8")
 
 [node name="Background" type="Panel" parent="." unique_id=1048004402]
 layout_mode = 1
@@ -58,11 +63,11 @@ grow_vertical = 2
 theme_override_constants/margin_left = 40
 theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 40
-theme_override_constants/margin_bottom = 80
+theme_override_constants/margin_bottom = 41
 
 [node name="VBoxMain" type="VBoxContainer" parent="Background/MarginContainer" unique_id=627232809]
 layout_mode = 2
-theme_override_constants/separation = 90
+theme_override_constants/separation = 60
 
 [node name="TopBar" type="HBoxContainer" parent="Background/MarginContainer/VBoxMain" unique_id=468534406]
 layout_mode = 2
@@ -73,6 +78,7 @@ alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0.5176471, 0.76862746, 0.6392157, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_0qs5r")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_v6w75")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8c456")
@@ -82,24 +88,27 @@ text = "< Back"
 [node name="TitleLabel" type="Label" parent="Background/MarginContainer/VBoxMain/TopBar" unique_id=681946821]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_0qs5r")
 text = "Select Song"
 label_settings = SubResource("LabelSettings_or2x4")
 horizontal_alignment = 1
 
 [node name="SongGrid" type="HBoxContainer" parent="Background/MarginContainer/VBoxMain" unique_id=642032127]
-custom_minimum_size = Vector2(0, 100)
+custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 2
 theme_override_constants/separation = 25
 alignment = 1
 
-[node name="Song1" type="Button" parent="Background/MarginContainer/VBoxMain/SongGrid" unique_id=650179126]
+[node name="dahlahSong" type="Button" parent="Background/MarginContainer/VBoxMain/SongGrid" unique_id=650179126]
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
+mouse_filter = 1
 theme_override_styles/normal = SubResource("StyleBoxFlat_q5fs0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xx2ao")
 
-[node name="VBoxCard" type="VBoxContainer" parent="Background/MarginContainer/VBoxMain/SongGrid/Song1" unique_id=1791260457]
+[node name="VBoxCard" type="VBoxContainer" parent="Background/MarginContainer/VBoxMain/SongGrid/dahlahSong" unique_id=1791260457]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -108,28 +117,30 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 12
 
-[node name="CharImage" type="TextureRect" parent="Background/MarginContainer/VBoxMain/SongGrid/Song1/VBoxCard" unique_id=790082179]
+[node name="CharImage" type="TextureRect" parent="Background/MarginContainer/VBoxMain/SongGrid/dahlahSong/VBoxCard" unique_id=790082179]
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("1_m4625")
+texture = ExtResource("1_ytmnh")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="CharName" type="Label" parent="Background/MarginContainer/VBoxMain/SongGrid/Song1/VBoxCard" unique_id=1593113569]
+[node name="CharName" type="Label" parent="Background/MarginContainer/VBoxMain/SongGrid/dahlahSong/VBoxCard" unique_id=1593113569]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.36078432, 0.2509804, 0.2, 1)
+theme_override_colors/font_color = Color(0.39215687, 0.49803922, 0.45490196, 1)
+theme_override_fonts/font = ExtResource("2_0qs5r")
 theme_override_font_sizes/font_size = 25
-text = "???"
+text = "dahlah."
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Song2" type="Button" parent="Background/MarginContainer/VBoxMain/SongGrid" unique_id=1809544619]
+[node name="GateOpenSong" type="Button" parent="Background/MarginContainer/VBoxMain/SongGrid" unique_id=1809544619]
 custom_minimum_size = Vector2(250, 350)
 layout_mode = 2
+mouse_filter = 1
 theme_override_styles/normal = SubResource("StyleBoxFlat_q5fs0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xx2ao")
 
-[node name="VBoxCard" type="VBoxContainer" parent="Background/MarginContainer/VBoxMain/SongGrid/Song2" unique_id=145051430]
+[node name="VBoxCard" type="VBoxContainer" parent="Background/MarginContainer/VBoxMain/SongGrid/GateOpenSong" unique_id=145051430]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -138,28 +149,30 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 12
 
-[node name="CharImage" type="TextureRect" parent="Background/MarginContainer/VBoxMain/SongGrid/Song2/VBoxCard" unique_id=2006230457]
+[node name="CharImage" type="TextureRect" parent="Background/MarginContainer/VBoxMain/SongGrid/GateOpenSong/VBoxCard" unique_id=2006230457]
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("2_be208")
+texture = ExtResource("2_nbyc8")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="CharName" type="Label" parent="Background/MarginContainer/VBoxMain/SongGrid/Song2/VBoxCard" unique_id=1555024427]
+[node name="CharName" type="Label" parent="Background/MarginContainer/VBoxMain/SongGrid/GateOpenSong/VBoxCard" unique_id=1555024427]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.36078432, 0.2509804, 0.2, 1)
+theme_override_colors/font_color = Color(0.39215687, 0.49803922, 0.45490196, 1)
+theme_override_fonts/font = ExtResource("2_0qs5r")
 theme_override_font_sizes/font_size = 25
-text = "???"
+text = "Gate Open: START!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Song3" type="Button" parent="Background/MarginContainer/VBoxMain/SongGrid" unique_id=1711249622]
+[node name="TetorisSong" type="Button" parent="Background/MarginContainer/VBoxMain/SongGrid" unique_id=1711249622]
 custom_minimum_size = Vector2(250, 350)
 layout_mode = 2
+mouse_filter = 1
 theme_override_styles/normal = SubResource("StyleBoxFlat_q5fs0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xx2ao")
 
-[node name="VBoxCard" type="VBoxContainer" parent="Background/MarginContainer/VBoxMain/SongGrid/Song3" unique_id=1701898575]
+[node name="VBoxCard" type="VBoxContainer" parent="Background/MarginContainer/VBoxMain/SongGrid/TetorisSong" unique_id=1701898575]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -168,22 +181,24 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 12
 
-[node name="CharImage" type="TextureRect" parent="Background/MarginContainer/VBoxMain/SongGrid/Song3/VBoxCard" unique_id=2039535641]
+[node name="CharImage" type="TextureRect" parent="Background/MarginContainer/VBoxMain/SongGrid/TetorisSong/VBoxCard" unique_id=2039535641]
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("1_m4625")
+texture = ExtResource("3_0qs5r")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="CharName" type="Label" parent="Background/MarginContainer/VBoxMain/SongGrid/Song3/VBoxCard" unique_id=1479318844]
+[node name="CharName" type="Label" parent="Background/MarginContainer/VBoxMain/SongGrid/TetorisSong/VBoxCard" unique_id=1479318844]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.36078432, 0.2509804, 0.2, 1)
+theme_override_colors/font_color = Color(0.39278373, 0.4990328, 0.4542063, 1)
+theme_override_fonts/font = ExtResource("2_0qs5r")
 theme_override_font_sizes/font_size = 25
-text = "???"
+text = "Tetoris"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Song4" type="Button" parent="Background/MarginContainer/VBoxMain/SongGrid" unique_id=1565491980]
+visible = false
 custom_minimum_size = Vector2(250, 350)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_q5fs0")
@@ -212,3 +227,27 @@ theme_override_font_sizes/font_size = 25
 text = "???"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TopBar2" type="HBoxContainer" parent="Background/MarginContainer/VBoxMain" unique_id=1863901889]
+layout_mode = 2
+mouse_filter = 0
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="PlayButton" type="Button" parent="Background/MarginContainer/VBoxMain/TopBar2" unique_id=1376824034]
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(0.5176471, 0.76862746, 0.6392157, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_0qs5r")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_v6w75")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8c456")
+button_mask = 0
+text = "Play >"
+
+[connection signal="pressed" from="Background/MarginContainer/VBoxMain/TopBar/BackButton" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Background/MarginContainer/VBoxMain/SongGrid/dahlahSong" to="." method="_on_dahlah_selected"]
+[connection signal="pressed" from="Background/MarginContainer/VBoxMain/SongGrid/GateOpenSong" to="." method="_on_gateopen_selected"]
+[connection signal="pressed" from="Background/MarginContainer/VBoxMain/SongGrid/TetorisSong" to="." method="_on_tetoris_selected"]
+[connection signal="pressed" from="Background/MarginContainer/VBoxMain/TopBar2/PlayButton" to="." method="_on_play_button_pressed"]
