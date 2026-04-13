@@ -1,18 +1,15 @@
 extends Node2D
 
 # Set this constant before the game starts
-<<<<<<< HEAD
-const in_edit_mode: bool = false 	
-=======
+
 const in_edit_mode: bool = false
-<<<<<<< HEAD
-var current_level_name = "DAHLAH"
+
+#var current_level_name = "DAHLAH"
 #var current_level_name = "GATE_OPEN_START"
 #var current_level_name = "TETORIS"
-=======
->>>>>>> f05c845833faaf3c9e0196544b54f8eac1098ce9
+
 var current_level_name = GameManager.selected_song
->>>>>>> 12f1d10e0d7af4a46a1d0dceda26e16d976f2185
+
 
 # Time it takes for falling key to reach critical spot
 var fk_fall_time: float = 2
