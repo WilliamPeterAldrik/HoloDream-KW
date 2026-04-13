@@ -25,6 +25,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var calculated_speed = (pass_threshold - init_y_pos) / 2.0
+	# AI Generated
 	global_position += Vector2(0, calculated_speed * delta)
 	
 	# Indikator key udh lewat apa blom

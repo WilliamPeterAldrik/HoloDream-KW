@@ -8,6 +8,11 @@ var falling_key = preload("res://Scenes/falling_key.tscn")
 @onready
 var score_text = preload("res://Scenes/score_press_text.tscn")
 
+# Preload particles
+@onready
+var hit_particle = preload("res://Scenes/particles.tscn")
+
+
 # D kiri, F Bawah, J kanan, Kx Atas
 @export
 var key_name: String = ""
@@ -31,6 +36,7 @@ var ok_press_score: float = 20
 func _ready() -> void:
 	$GlowOverlay.frame = frame 
 	Signals.CreateFallingKey.connect(CreateFallingKey)
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -39,7 +45,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed(key_name):
 		Signals.KeyListenerPress.emit(key_name, frame)
 	
-	
+	# AI Fixed
 	# Kalo lewat layar, dihapus
 	while falling_key_queue.size() > 0:
 		var front_key = falling_key_queue.front()
@@ -90,6 +96,16 @@ func _process(delta: float) -> void:
 					Signals.ResetCombo.emit()
 				
 				key_to_pop.queue_free()
+				
+#				Particles
+#				AI Generated
+				var particle_inst = hit_particle.instantiate()
+				get_tree().get_root().add_child(particle_inst)
+				particle_inst.global_position = global_position  # at the key listener's position
+				particle_inst.emitting = true
+				
+				var lifetime = particle_inst.lifetime
+				get_tree().create_timer(lifetime + 0.1).timeout.connect(particle_inst.queue_free)
 				
 				var st_inst = score_text.instantiate()
 				get_tree().get_root().call_deferred("add_child", st_inst)

@@ -27,6 +27,7 @@ var level_info = {
 func _ready() -> void:
 	
 	$MusicPlayer.stream = level_info.get(current_level_name).get("music")
+	# AI Assisted
 	await get_tree().create_timer(2).timeout
 	$MusicPlayer.play()
 	
@@ -57,7 +58,7 @@ func _ready() -> void:
 			
 
 func KeyListenerPress(button_name: String, array_num: int):
-	#print(str(array_num) + " " + str($MusicPlayer.get_playback_positggion()))
+	#print(str(array_num) + " " + str($MusicPlayer.get_playback_position()))
 	fk_output_arr[array_num].append($MusicPlayer.get_playback_position()- fk_fall_time)
 
 func SpawnFallingKey(button_name: String, delay: float):
