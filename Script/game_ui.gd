@@ -32,5 +32,6 @@ func _on_pause_button_pressed() -> void:
 	get_node("../UpArrow").hide()
 	get_node("../LevelEditor").hide()
 	hide()
+	
 	get_tree().paused = true
 	# TODO: Pause the playtime

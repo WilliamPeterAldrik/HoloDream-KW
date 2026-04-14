@@ -46,8 +46,12 @@ func _ready() -> void:
 	$BackgroundVideo.stream = level_info.get(current_level_name).get("video")
 	# AI Assisted
 	await get_tree().create_timer(2).timeout
-	$MusicPlayer.play()
-	$BackgroundVideo.play()
+	if get_tree().paused == true:
+		$BackgroundVideo.paused = true
+		$MusicPlayer.paused = true
+	else:
+		$BackgroundVideo.play()
+		$MusicPlayer.play()
 	
 	if in_edit_mode:
 		Signals.KeyListenerPress.connect(KeyListenerPress)
