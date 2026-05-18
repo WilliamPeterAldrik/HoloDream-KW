@@ -9,6 +9,7 @@ var startSignal = true
 var settingSignal = true
 
 func _ready():
+	# AI code
 	# 2. Sambungkan tombol bawaan ke fungsi di script ini
 	# (Perhatikan path-nya menyesuaikan nama node di screenshot kamu)
 	var menu_list = $Background/MarginContainer/MainLayout/MenuList
@@ -16,23 +17,26 @@ func _ready():
 	if start.is_connected("pressed", _on_start_pressed):
 		start.disconnect("pressed", _on_start_pressed)
 	start.pressed.connect(_on_start_pressed)
-
+	
+	# AI code
 	var setting = menu_list.get_node("Setting")
 	if setting.is_connected("pressed", _on_setting_pressed):
 		setting.disconnect("pressed", _on_setting_pressed)
 	setting.pressed.connect(_on_setting_pressed)
 
+	# AI code
 	var exit = menu_list.get_node("Exit")
 	if exit.is_connected("pressed", _on_exit_pressed):
 		exit.disconnect("pressed", _on_exit_pressed)
 	exit.pressed.connect(_on_exit_pressed)
 
+# Human code
 # 3. Pancarkan (emit) sinyal saat tombol diklik
 func _on_start_pressed():
 	start_pressed.emit()
-
+# Human code
 func _on_setting_pressed():
 	setting_pressed.emit()
-
+# Human code
 func _on_exit_pressed():
 	exit_pressed.emit()

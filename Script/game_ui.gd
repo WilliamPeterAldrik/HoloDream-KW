@@ -24,6 +24,7 @@ func ResetCombo():
 	combo_count = 0
 	%ComboLabel.text = ""
 
+# Human code
 func _on_pause_button_pressed() -> void:
 	get_node("../PauseUI").show()
 	get_node("../LeftArrow").hide()
@@ -34,4 +35,3 @@ func _on_pause_button_pressed() -> void:
 	hide()
 	
 	get_tree().paused = true
-	# TODO: Pause the playtime
