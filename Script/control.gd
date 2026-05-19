@@ -1,3 +1,4 @@
+# Human
 extends Control
 
 # Character selection di-comment/dimatikan dulu karena kita lompat langsung ke Song Selection
@@ -11,6 +12,7 @@ var scene_gameplay = preload("res://Scenes/game_level.tscn")
 var active_scene = null
 var menu_main = null
 
+# AI Generated
 func _ready():
 	# Tampilkan Main Menu saat awal
 	show_main_menu()

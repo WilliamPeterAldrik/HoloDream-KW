@@ -3,6 +3,7 @@ extends Control
 signal back_pressed
 signal play_pressed
 
+# AI Generated
 func _ready():
 	print("--- MASUK KE LAYAR SONG SELECTION ---")
 	
